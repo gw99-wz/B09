@@ -7,39 +7,57 @@
 | 赛题 | 写作09｜方法与实验章节写作 |
 | Challenge ID | `product-arena-05-64faa4a2` |
 | 赛题页 | https://play.bohrium.com/challenge/product-arena-05-64faa4a2 |
-| 提交物 | Skill 本体 `submission/SKILL.md` + 确定性脚本 + 参数台账 / 复现清单模板 + 文档 + 自测题集 |
-| 聚焦 | **写得准**（参数台账 + 数值防火墙）为主轴，贯通 **写得全**、**做得着**、**说得住** |
-| 状态 | **基建完成，方案实现中**（当前仓库只有设计与骨架，尚未提交方案代码） |
+| 提交物 | `submission/`（Skill 本体 + 确定性脚本 + 模板 + 文档 + 示例 + 回归题集） |
+| 提交 | Attempt **99623**（`submitted`，人工评分排队） |
+| 自测 | **10/10 通过**（含 4 类反例） |
+| 聚焦 | **写得准**（参数台账 + 数值防火墙）+ **做得着**（复现清单生成），贯通 **写得全** 与 **说得住** |
 
 ## 一句话
 
-把散落的实验记录（配置 / 日志 / 代码 / 数据说明）变成一份**每个数字都能回到原始材料、每条步骤都带输入输出、缺口全部显式交给作者**的方法与实验章节；
-模型只写"带槽位的散文"，所有数值由确定性渲染器从**参数台账**灌入，因此"为段落顺畅而补出的数值"在机制上写不进来。
+把散落的实验记录（配置 / 日志 / 代码 / 数据说明）变成一份**每个数字都能回到原始材料、每条步骤都带输入输出、缺口全部显式交给作者**的方法与实验章节。
 
-## 四个痛点 → 四道机制闸门
+模型只写"带槽位的散文"，数值由确定性渲染器从**参数台账**灌入；因此"为段落顺畅而补出的数值"在机制上写不进来。
 
-| 痛点 | 失败模式（基础 Agent 的真实表现） | 候选强制机制 |
-|-|-|-|
-| 写得全 | 只留能读通的主干，漏掉随机种子、重复次数、划分方式、对照预算 | 六类要素**覆盖矩阵**（步骤 / 设置 / 参数 / 数据集 / 对照 / 复现与限制）× 必填子字段，缺项落 `gaps.json` |
-| 写得准 | 把 0.1 写成 0.01，把 lr 抄成 weight_decay，凭空补 batch size | **参数台账**单一事实源 + 草稿槽位协议 + 渲染后**数值防火墙**（见 `docs/PLAN.md`） |
-| 做得着 | 只写"按标准流程训练"，不给版本 / 种子 / 命令 | 由台账与材料**确定性生成**复现清单：代码版本、环境、数据获取、种子、命令、预期产物 |
-| 说得住 | "受限于时间与数据"式套话；缺口不写、写了不确认 | 限制条件四元组（场景 / 失效机制 / 适用范围 / 证据）+ 缺口登记 + 追问清单；套话词表直接拦截 |
+## 四条守恒式
 
-## 目录（规划）
+```
+来源：canonical(ledger[p].value) == canonical(extract(material, locator))
+渲染：rendered[slot]         == ledger[slot.param]
+数字：Numbers(rendered)      == Numbers(substituted_slots) ∪ Whitelist
+冲突：材料不一致时 ledger.status == "conflict"，绝不择一
+```
+
+第 3 条由 `submission/scripts/pk/firewall.py` 实现：渲染器记录每个槽位替换的字符区间，防火墙逐 token 判断归属；手写的、恰好等于台账值的数字同样会被拦截。
+
+## 目录
 
 ```
 B09/
 ├─ README.md
-├─ .gitignore                 # 仅供 git 使用，不进提交包（无后缀名文件合规）
-├─ docs/PLAN.md               # 技术架构与判定规则
-└─ submission/                # ← 打包根（对应 submit --outputs），实现阶段填充
-   ├─ SKILL.md                # 入口：用途 / 触发 / 调用 / 输入输出 / 异常 / 边界
-   ├─ GITHUB_URL.txt          # 平台要求的作品链接
-   ├─ scripts/                # 台账、对齐校验、渲染、防火墙、清单生成
-   ├─ templates/              # 参数表 / 复现清单 / 追问清单模板
+├─ .gitignore                 # 仅供 git 使用，不进提交包
+├─ docs/PLAN.md               # 架构初稿
+└─ submission/                # ← 打包根（playground submit --outputs）
+   ├─ SKILL.md                # 入口
+   ├─ GITHUB_URL.txt
+   ├─ requirements.txt        # 仅标准库
+   ├─ scripts/run.py          # init / check / all
+   ├─ scripts/pk/             # 契约、材料、抽取、台账、渲染、防火墙、覆盖、复现、缺口、产物
+   ├─ templates/              # 参数表 / 复现清单 / 追问清单 / 骨架
    ├─ docs/                   # METHOD / USAGE / LIMITS
-   └─ tests/                  # 回归题集（含反例：无源数值 / 冲突参数 / 空话限制）
+   ├─ examples/mini/          # 合成示例（非正式案例）
+   ├─ tests/run_tests.py      # 10 项回归
+   └─ src/reproduce.py        # 一键复现示例
 ```
+
+## 验证结果
+
+| 项 | 结果 |
+|-|-|
+| 回归题集 | 10/10（未绑定数字、冲突、缺种子、套话限制、未知槽位、伪造提议、契约未知字段、幂等、打包） |
+| 防火墙拦截 | 草稿写死 `32`（台账为 `64`）→ `E_UNBOUND_NUMBER`，exit 2，**不产出 `draft.md`**，只留 `draft.rejected.md` |
+| 示例覆盖矩阵 | `coverage_score = 0.90`（27 present / 3 missing，缺硬件、单位、commit） |
+| 示例复现清单 | `repro_score = 0.75`（6 present / 2 missing：commit、依赖文件） |
+| 打包 | 47 个文本文件 / 158KB，无后缀名文件、无符号链接 |
 
 ## 硬约束
 
@@ -47,4 +65,4 @@ B09/
 - 资源上限 **≤50 个 UTF-8 文本文件、单件 ≤500KB、合计 ≤2MB、无符号链接**；`submission/` 内一律带扩展名。
 - `output_contract` 字段表不公开：运行时从 `/input/case.json` 解析，映射不到写 `null` 并进 `unresolved`。
 
-详见 [`docs/PLAN.md`](docs/PLAN.md)。
+详见 [`submission/docs/METHOD.md`](submission/docs/METHOD.md) 与 [`submission/SKILL.md`](submission/SKILL.md)。

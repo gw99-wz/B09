@@ -18,6 +18,12 @@ node_modules/
 .env
 *.token
 
+# Test scratch
+.tmp/
+.testtmp/
+.testtmp_old/
+submission/examples/mini/work/
+
 # Traces / session logs live at repo root only; anything under submission/ is a
 # shipped example and must NOT be caught by this rule.
 /*.jsonl

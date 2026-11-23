@@ -1,0 +1,6 @@
+{
+  "case_id": "mini-methods-001",
+  "task": "Write the Methods and Experimental Setup section for the CIFAR-10 ResNet study. Every numeric value must be traceable to the supplied config, log or script.",
+  "output_contract": ["draft_md", "fact_source_map", "uncertainty", "status"],
+  "materials": ["materials"]
+}

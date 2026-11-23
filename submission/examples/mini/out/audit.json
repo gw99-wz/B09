@@ -1,0 +1,187 @@
+{
+  "case_id": "mini-methods-001",
+  "contract_shape": "list",
+  "contract_fields": [
+    "draft_md",
+    "fact_source_map",
+    "uncertainty",
+    "status"
+  ],
+  "render_errors": [],
+  "unbound_numbers": [],
+  "limitation_issues": [],
+  "rejected_candidates": [],
+  "proposals_rejected": [],
+  "substitutions": [
+    {
+      "slot": "D:D1",
+      "rendered": "CIFAR-10 v1.0",
+      "kind": "dataset",
+      "id": "D1"
+    },
+    {
+      "slot": "P:split_seed",
+      "rendered": "42",
+      "kind": "param",
+      "id": "P_split_seed"
+    },
+    {
+      "slot": "D:D1",
+      "rendered": "CIFAR-10 v1.0",
+      "kind": "dataset",
+      "id": "D1"
+    },
+    {
+      "slot": "P:config",
+      "rendered": "config.yaml",
+      "kind": "param",
+      "id": "P_config"
+    },
+    {
+      "slot": "P:train_batch_size",
+      "rendered": "64",
+      "kind": "param",
+      "id": "P_train_batch_size"
+    },
+    {
+      "slot": "P:train_learning_rate",
+      "rendered": "0.001",
+      "kind": "param",
+      "id": "P_train_learning_rate"
+    },
+    {
+      "slot": "P:checkpoint",
+      "rendered": "best.pt",
+      "kind": "param",
+      "id": "P_checkpoint"
+    },
+    {
+      "slot": "P:train_max_epochs",
+      "rendered": "30",
+      "kind": "param",
+      "id": "P_train_max_epochs"
+    },
+    {
+      "slot": "P:python",
+      "rendered": "3.11.9",
+      "kind": "param",
+      "id": "P_python"
+    },
+    {
+      "slot": "P:cuda_version",
+      "rendered": "12.1",
+      "kind": "param",
+      "id": "P_cuda_version"
+    },
+    {
+      "slot": "P:cuda_visible_devices",
+      "rendered": "0",
+      "kind": "param",
+      "id": "P_cuda_visible_devices"
+    },
+    {
+      "slot": "P:config",
+      "rendered": "config.yaml",
+      "kind": "param",
+      "id": "P_config"
+    },
+    {
+      "slot": "P:seed",
+      "rendered": "42",
+      "kind": "param",
+      "id": "P_seed"
+    },
+    {
+      "slot": "P:train_batch_size",
+      "rendered": "64",
+      "kind": "param",
+      "id": "P_train_batch_size"
+    },
+    {
+      "slot": "P:train_batch_size",
+      "rendered": "64",
+      "kind": "param",
+      "id": "P_train_batch_size"
+    },
+    {
+      "slot": "P:train_num_workers",
+      "rendered": "4",
+      "kind": "param",
+      "id": "P_train_num_workers"
+    },
+    {
+      "slot": "P:val_batch_size",
+      "rendered": "128",
+      "kind": "param",
+      "id": "P_val_batch_size"
+    },
+    {
+      "slot": "P:test_batch_size",
+      "rendered": "128",
+      "kind": "param",
+      "id": "P_test_batch_size"
+    },
+    {
+      "slot": "P:seed",
+      "rendered": "42",
+      "kind": "param",
+      "id": "P_seed"
+    },
+    {
+      "slot": "P:train_batch_size",
+      "rendered": "64",
+      "kind": "param",
+      "id": "P_train_batch_size"
+    },
+    {
+      "slot": "P:train_learning_rate",
+      "rendered": "0.001",
+      "kind": "param",
+      "id": "P_train_learning_rate"
+    },
+    {
+      "slot": "P:train_weight_decay",
+      "rendered": "0.0001",
+      "kind": "param",
+      "id": "P_train_weight_decay"
+    },
+    {
+      "slot": "P:train_max_epochs",
+      "rendered": "30",
+      "kind": "param",
+      "id": "P_train_max_epochs"
+    },
+    {
+      "slot": "C:C1",
+      "rendered": "ResNet-18 torchvision 0.17",
+      "kind": "control",
+      "id": "C1"
+    },
+    {
+      "slot": "P:train_batch_size",
+      "rendered": "64",
+      "kind": "param",
+      "id": "P_train_batch_size"
+    },
+    {
+      "slot": "P:split_seed",
+      "rendered": "42",
+      "kind": "param",
+      "id": "P_split_seed"
+    }
+  ],
+  "coverage": {
+    "present": 27,
+    "partial": 0,
+    "missing": 3,
+    "total": 30
+  },
+  "repro": {
+    "present": 6,
+    "partial": 0,
+    "missing": 2,
+    "total": 8
+  },
+  "status": "partial",
+  "draft_sha256_16": "94b8f798ab697d08"
+}

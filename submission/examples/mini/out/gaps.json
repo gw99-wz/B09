@@ -1,0 +1,29 @@
+[
+  {
+    "id": "G01",
+    "element": "params.unit",
+    "what": "params.unit 不足（missing）",
+    "why": "材料中未找到可核对来源",
+    "impact": "章节可能缺少该要素或无法复现",
+    "question": "请作者补充/确认 params.unit 的取值与来源",
+    "status": "open"
+  },
+  {
+    "id": "G02",
+    "element": "settings.hardware",
+    "what": "settings.hardware 不足（missing）",
+    "why": "材料中未找到可核对来源",
+    "impact": "章节可能缺少该要素或无法复现",
+    "question": "请作者补充/确认 settings.hardware 的取值与来源",
+    "status": "open"
+  },
+  {
+    "id": "G03",
+    "element": "repro.code_version",
+    "what": "repro.code_version 不足（missing）",
+    "why": "[MISSING] commit / release",
+    "impact": "章节可能缺少该要素或无法复现",
+    "question": "请作者补充/确认 repro.code_version 的取值与来源",
+    "status": "open"
+  }
+]

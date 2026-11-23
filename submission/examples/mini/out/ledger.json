@@ -1,0 +1,463 @@
+{
+  "params": [
+    {
+      "id": "P_batch_size",
+      "name": "batch_size",
+      "value": "64",
+      "raw": "64",
+      "unit": "",
+      "kind": "number",
+      "scope": "all",
+      "status": "verified",
+      "sources": [
+        {
+          "file": "materials/run_train.sh",
+          "line": 3,
+          "quote": "python train.py --config config.yaml --seed 42 --batch_size 64",
+          "sha256_16": "ce73f700ed4fd721",
+          "extractor": "sh_flag"
+        },
+        {
+          "file": "materials/train.log",
+          "line": 7,
+          "quote": "batch_size=64",
+          "sha256_16": "9f513eefee5c7b15",
+          "extractor": "log"
+        }
+      ],
+      "alternatives": [],
+      "extractor": "sh_flag"
+    },
+    {
+      "id": "P_checkpoint",
+      "name": "checkpoint",
+      "value": "best.pt",
+      "raw": "best.pt",
+      "unit": "",
+      "kind": "string",
+      "scope": "all",
+      "status": "verified",
+      "sources": [
+        {
+          "file": "materials/run_train.sh",
+          "line": 4,
+          "quote": "python eval.py --checkpoint best.pt --split test",
+          "sha256_16": "3a666ba617d740c5",
+          "extractor": "sh_flag"
+        }
+      ],
+      "alternatives": [],
+      "extractor": "sh_flag"
+    },
+    {
+      "id": "P_config",
+      "name": "config",
+      "value": "config.yaml",
+      "raw": "config.yaml",
+      "unit": "",
+      "kind": "string",
+      "scope": "all",
+      "status": "verified",
+      "sources": [
+        {
+          "file": "materials/run_train.sh",
+          "line": 3,
+          "quote": "python train.py --config config.yaml --seed 42 --batch_size 64",
+          "sha256_16": "ce73f700ed4fd721",
+          "extractor": "sh_flag"
+        }
+      ],
+      "alternatives": [],
+      "extractor": "sh_flag"
+    },
+    {
+      "id": "P_cuda_version",
+      "name": "cuda_version",
+      "value": "12.1",
+      "raw": "12.1",
+      "unit": "",
+      "kind": "number",
+      "scope": "all",
+      "status": "verified",
+      "sources": [
+        {
+          "file": "materials/train.log",
+          "line": 4,
+          "quote": "cuda_version=12.1",
+          "sha256_16": "f446d65fe199e831",
+          "extractor": "log"
+        }
+      ],
+      "alternatives": [],
+      "extractor": "log"
+    },
+    {
+      "id": "P_cuda_visible_devices",
+      "name": "cuda_visible_devices",
+      "value": "0",
+      "raw": "0",
+      "unit": "",
+      "kind": "number",
+      "scope": "all",
+      "status": "verified",
+      "sources": [
+        {
+          "file": "materials/run_train.sh",
+          "line": 2,
+          "quote": "export CUDA_VISIBLE_DEVICES=0",
+          "sha256_16": "a5791fd2a9ddf08d",
+          "extractor": "sh_env"
+        }
+      ],
+      "alternatives": [],
+      "extractor": "sh_env"
+    },
+    {
+      "id": "P_device",
+      "name": "device",
+      "value": "cuda",
+      "raw": "cuda",
+      "unit": "",
+      "kind": "string",
+      "scope": "all",
+      "status": "verified",
+      "sources": [
+        {
+          "file": "materials/train.log",
+          "line": 2,
+          "quote": "device=cuda",
+          "sha256_16": "601cae5625b27cef",
+          "extractor": "log"
+        }
+      ],
+      "alternatives": [],
+      "extractor": "log"
+    },
+    {
+      "id": "P_epochs",
+      "name": "epochs",
+      "value": "30",
+      "raw": "30",
+      "unit": "",
+      "kind": "number",
+      "scope": "all",
+      "status": "verified",
+      "sources": [
+        {
+          "file": "materials/train.log",
+          "line": 6,
+          "quote": "epochs=30",
+          "sha256_16": "c9c2ca3973cd6271",
+          "extractor": "log"
+        }
+      ],
+      "alternatives": [],
+      "extractor": "log"
+    },
+    {
+      "id": "P_model_name",
+      "name": "model_name",
+      "value": "ResNet-50",
+      "raw": "ResNet-50",
+      "unit": "",
+      "kind": "string",
+      "scope": "all",
+      "status": "verified",
+      "sources": [
+        {
+          "file": "materials/config.yaml",
+          "line": 9,
+          "quote": "name: ResNet-50",
+          "sha256_16": "a24fd9f600486135",
+          "extractor": "yaml"
+        }
+      ],
+      "alternatives": [],
+      "extractor": "yaml"
+    },
+    {
+      "id": "P_model_pretrained",
+      "name": "model_pretrained",
+      "value": "true",
+      "raw": "true",
+      "unit": "",
+      "kind": "bool",
+      "scope": "all",
+      "status": "verified",
+      "sources": [
+        {
+          "file": "materials/config.yaml",
+          "line": 10,
+          "quote": "pretrained: true",
+          "sha256_16": "12e7e2f6b245c994",
+          "extractor": "yaml"
+        }
+      ],
+      "alternatives": [],
+      "extractor": "yaml"
+    },
+    {
+      "id": "P_python",
+      "name": "python",
+      "value": "3.11.9",
+      "raw": "3.11.9",
+      "unit": "",
+      "kind": "string",
+      "scope": "all",
+      "status": "verified",
+      "sources": [
+        {
+          "file": "materials/train.log",
+          "line": 3,
+          "quote": "python=3.11.9",
+          "sha256_16": "c5a446d7b213fc41",
+          "extractor": "log"
+        }
+      ],
+      "alternatives": [],
+      "extractor": "log"
+    },
+    {
+      "id": "P_seed",
+      "name": "seed",
+      "value": "42",
+      "raw": "42",
+      "unit": "",
+      "kind": "number",
+      "scope": "all",
+      "status": "verified",
+      "sources": [
+        {
+          "file": "materials/run_train.sh",
+          "line": 3,
+          "quote": "python train.py --config config.yaml --seed 42 --batch_size 64",
+          "sha256_16": "ce73f700ed4fd721",
+          "extractor": "sh_flag"
+        },
+        {
+          "file": "materials/train.log",
+          "line": 5,
+          "quote": "seed=42",
+          "sha256_16": "9fa528fa3271e27a",
+          "extractor": "log"
+        }
+      ],
+      "alternatives": [],
+      "extractor": "sh_flag"
+    },
+    {
+      "id": "P_split",
+      "name": "split",
+      "value": "test",
+      "raw": "test",
+      "unit": "",
+      "kind": "string",
+      "scope": "all",
+      "status": "verified",
+      "sources": [
+        {
+          "file": "materials/run_train.sh",
+          "line": 4,
+          "quote": "python eval.py --checkpoint best.pt --split test",
+          "sha256_16": "3a666ba617d740c5",
+          "extractor": "sh_flag"
+        }
+      ],
+      "alternatives": [],
+      "extractor": "sh_flag"
+    },
+    {
+      "id": "P_split_seed",
+      "name": "split_seed",
+      "value": "42",
+      "raw": "42",
+      "unit": "",
+      "kind": "number",
+      "scope": "all",
+      "status": "verified",
+      "sources": [
+        {
+          "file": "materials/dataset.md",
+          "line": 5,
+          "quote": "Split seed: 42",
+          "sha256_16": "0ea42e7e62279792",
+          "extractor": "md_kv"
+        }
+      ],
+      "alternatives": [],
+      "extractor": "md_kv"
+    },
+    {
+      "id": "P_test_batch_size",
+      "name": "test_batch_size",
+      "value": "128",
+      "raw": "128",
+      "unit": "",
+      "kind": "number",
+      "scope": "test",
+      "status": "verified",
+      "sources": [
+        {
+          "file": "materials/train.log",
+          "line": 9,
+          "quote": "test_batch_size=128",
+          "sha256_16": "c79093814877fd96",
+          "extractor": "log"
+        }
+      ],
+      "alternatives": [],
+      "extractor": "log"
+    },
+    {
+      "id": "P_train_batch_size",
+      "name": "train_batch_size",
+      "value": "64",
+      "raw": "64",
+      "unit": "",
+      "kind": "number",
+      "scope": "train",
+      "status": "verified",
+      "sources": [
+        {
+          "file": "materials/config.yaml",
+          "line": 2,
+          "quote": "batch_size: 64",
+          "sha256_16": "3ff3d89fb1e4662c",
+          "extractor": "yaml"
+        }
+      ],
+      "alternatives": [],
+      "extractor": "yaml"
+    },
+    {
+      "id": "P_train_learning_rate",
+      "name": "train_learning_rate",
+      "value": "0.001",
+      "raw": "0.001",
+      "unit": "",
+      "kind": "number",
+      "scope": "train",
+      "status": "verified",
+      "sources": [
+        {
+          "file": "materials/config.yaml",
+          "line": 3,
+          "quote": "learning_rate: 0.001",
+          "sha256_16": "8c65971bfb733ec6",
+          "extractor": "yaml"
+        }
+      ],
+      "alternatives": [],
+      "extractor": "yaml"
+    },
+    {
+      "id": "P_train_max_epochs",
+      "name": "train_max_epochs",
+      "value": "30",
+      "raw": "30",
+      "unit": "",
+      "kind": "number",
+      "scope": "train",
+      "status": "verified",
+      "sources": [
+        {
+          "file": "materials/config.yaml",
+          "line": 5,
+          "quote": "max_epochs: 30",
+          "sha256_16": "7be0760256e4aa32",
+          "extractor": "yaml"
+        }
+      ],
+      "alternatives": [],
+      "extractor": "yaml"
+    },
+    {
+      "id": "P_train_num_workers",
+      "name": "train_num_workers",
+      "value": "4",
+      "raw": "4",
+      "unit": "",
+      "kind": "number",
+      "scope": "train",
+      "status": "verified",
+      "sources": [
+        {
+          "file": "materials/config.yaml",
+          "line": 7,
+          "quote": "num_workers: 4",
+          "sha256_16": "982780b63455993a",
+          "extractor": "yaml"
+        }
+      ],
+      "alternatives": [],
+      "extractor": "yaml"
+    },
+    {
+      "id": "P_train_seed",
+      "name": "train_seed",
+      "value": "42",
+      "raw": "42",
+      "unit": "",
+      "kind": "number",
+      "scope": "train",
+      "status": "verified",
+      "sources": [
+        {
+          "file": "materials/config.yaml",
+          "line": 6,
+          "quote": "seed: 42",
+          "sha256_16": "c08de4e3d2195d4e",
+          "extractor": "yaml"
+        }
+      ],
+      "alternatives": [],
+      "extractor": "yaml"
+    },
+    {
+      "id": "P_train_weight_decay",
+      "name": "train_weight_decay",
+      "value": "0.0001",
+      "raw": "0.0001",
+      "unit": "",
+      "kind": "number",
+      "scope": "train",
+      "status": "verified",
+      "sources": [
+        {
+          "file": "materials/config.yaml",
+          "line": 4,
+          "quote": "weight_decay: 0.0001",
+          "sha256_16": "5c6e53e948c8810d",
+          "extractor": "yaml"
+        }
+      ],
+      "alternatives": [],
+      "extractor": "yaml"
+    },
+    {
+      "id": "P_val_batch_size",
+      "name": "val_batch_size",
+      "value": "128",
+      "raw": "128",
+      "unit": "",
+      "kind": "number",
+      "scope": "validation",
+      "status": "verified",
+      "sources": [
+        {
+          "file": "materials/train.log",
+          "line": 8,
+          "quote": "val_batch_size=128",
+          "sha256_16": "4f4ad0c8becc8ae1",
+          "extractor": "log"
+        }
+      ],
+      "alternatives": [],
+      "extractor": "log"
+    }
+  ],
+  "conflicts": [],
+  "rejected": [],
+  "proposals_accepted": [],
+  "proposals_rejected": []
+}

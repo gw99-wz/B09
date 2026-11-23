@@ -1,0 +1,243 @@
+{
+  "classes": {
+    "params": {
+      "name": {
+        "status": "present",
+        "detail": "21 个参数"
+      },
+      "value": {
+        "status": "present"
+      },
+      "unit": {
+        "status": "missing"
+      },
+      "scope": {
+        "status": "present"
+      },
+      "source": {
+        "status": "present"
+      }
+    },
+    "datasets": {
+      "name": {
+        "status": "present",
+        "detail": "CIFAR-10"
+      },
+      "version": {
+        "status": "present",
+        "detail": "v1.0"
+      },
+      "size": {
+        "status": "present",
+        "detail": "60000 images"
+      },
+      "preprocess": {
+        "status": "present",
+        "detail": "random crop 32, horizontal flip"
+      },
+      "split": {
+        "status": "present",
+        "detail": "train 50000 / val 5000 / test 5000"
+      },
+      "random": {
+        "status": "present",
+        "detail": "42"
+      }
+    },
+    "controls": {
+      "baseline": {
+        "status": "present",
+        "detail": "ResNet-18"
+      },
+      "version": {
+        "status": "present",
+        "detail": "torchvision 0.17"
+      },
+      "budget": {
+        "status": "present",
+        "detail": "same 30 epochs, same batch size"
+      },
+      "metric": {
+        "status": "present",
+        "detail": "top-1 accuracy, mean over 3 seeds"
+      },
+      "stat": {
+        "status": "present",
+        "detail": "3 repeats"
+      }
+    },
+    "settings": {
+      "hardware": {
+        "status": "missing",
+        "detail": ""
+      },
+      "software": {
+        "status": "present",
+        "detail": "3.11.9 / 12.1"
+      },
+      "environment": {
+        "status": "present"
+      },
+      "seed": {
+        "status": "present"
+      },
+      "repeats": {
+        "status": "present"
+      },
+      "split": {
+        "status": "present"
+      }
+    },
+    "steps": {
+      "input": {
+        "status": "present",
+        "detail": "4 条编号步骤"
+      },
+      "operation": {
+        "status": "present"
+      },
+      "output": {
+        "status": "present"
+      },
+      "decision": {
+        "status": "present"
+      }
+    },
+    "repro": {
+      "code_version": {
+        "status": "missing",
+        "detail": "[MISSING] commit / release"
+      },
+      "environment": {
+        "status": "present",
+        "detail": "Python 3.11.9; CUDA 12.1"
+      },
+      "command": {
+        "status": "present",
+        "detail": "python train.py --config config.yaml --seed 42 --batch_size 64"
+      },
+      "data_access": {
+        "status": "present",
+        "detail": "CIFAR-10 v1.0; train 50000 / val 5000 / test 5000"
+      }
+    }
+  },
+  "flat": {
+    "params.name": {
+      "status": "present",
+      "detail": "21 个参数"
+    },
+    "params.value": {
+      "status": "present"
+    },
+    "params.unit": {
+      "status": "missing"
+    },
+    "params.scope": {
+      "status": "present"
+    },
+    "params.source": {
+      "status": "present"
+    },
+    "datasets.name": {
+      "status": "present",
+      "detail": "CIFAR-10"
+    },
+    "datasets.version": {
+      "status": "present",
+      "detail": "v1.0"
+    },
+    "datasets.size": {
+      "status": "present",
+      "detail": "60000 images"
+    },
+    "datasets.preprocess": {
+      "status": "present",
+      "detail": "random crop 32, horizontal flip"
+    },
+    "datasets.split": {
+      "status": "present",
+      "detail": "train 50000 / val 5000 / test 5000"
+    },
+    "datasets.random": {
+      "status": "present",
+      "detail": "42"
+    },
+    "controls.baseline": {
+      "status": "present",
+      "detail": "ResNet-18"
+    },
+    "controls.version": {
+      "status": "present",
+      "detail": "torchvision 0.17"
+    },
+    "controls.budget": {
+      "status": "present",
+      "detail": "same 30 epochs, same batch size"
+    },
+    "controls.metric": {
+      "status": "present",
+      "detail": "top-1 accuracy, mean over 3 seeds"
+    },
+    "controls.stat": {
+      "status": "present",
+      "detail": "3 repeats"
+    },
+    "settings.hardware": {
+      "status": "missing",
+      "detail": ""
+    },
+    "settings.software": {
+      "status": "present",
+      "detail": "3.11.9 / 12.1"
+    },
+    "settings.environment": {
+      "status": "present"
+    },
+    "settings.seed": {
+      "status": "present"
+    },
+    "settings.repeats": {
+      "status": "present"
+    },
+    "settings.split": {
+      "status": "present"
+    },
+    "steps.input": {
+      "status": "present",
+      "detail": "4 条编号步骤"
+    },
+    "steps.operation": {
+      "status": "present"
+    },
+    "steps.output": {
+      "status": "present"
+    },
+    "steps.decision": {
+      "status": "present"
+    },
+    "repro.code_version": {
+      "status": "missing",
+      "detail": "[MISSING] commit / release"
+    },
+    "repro.environment": {
+      "status": "present",
+      "detail": "Python 3.11.9; CUDA 12.1"
+    },
+    "repro.command": {
+      "status": "present",
+      "detail": "python train.py --config config.yaml --seed 42 --batch_size 64"
+    },
+    "repro.data_access": {
+      "status": "present",
+      "detail": "CIFAR-10 v1.0; train 50000 / val 5000 / test 5000"
+    }
+  },
+  "summary": {
+    "present": 27,
+    "partial": 0,
+    "missing": 3,
+    "total": 30
+  },
+  "score": 0.9
+}

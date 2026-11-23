@@ -1,0 +1,625 @@
+{
+  "case_id": "mini-methods-001",
+  "draft_md": "draft.md",
+  "fact_source_map": [
+    {
+      "kind": "param",
+      "name": "batch_size",
+      "value": "64",
+      "status": "verified",
+      "source": {
+        "file": "materials/run_train.sh",
+        "line": 3,
+        "quote": "python train.py --config config.yaml --seed 42 --batch_size 64"
+      }
+    },
+    {
+      "kind": "param",
+      "name": "batch_size",
+      "value": "64",
+      "status": "verified",
+      "source": {
+        "file": "materials/train.log",
+        "line": 7,
+        "quote": "batch_size=64"
+      }
+    },
+    {
+      "kind": "param",
+      "name": "checkpoint",
+      "value": "best.pt",
+      "status": "verified",
+      "source": {
+        "file": "materials/run_train.sh",
+        "line": 4,
+        "quote": "python eval.py --checkpoint best.pt --split test"
+      }
+    },
+    {
+      "kind": "param",
+      "name": "config",
+      "value": "config.yaml",
+      "status": "verified",
+      "source": {
+        "file": "materials/run_train.sh",
+        "line": 3,
+        "quote": "python train.py --config config.yaml --seed 42 --batch_size 64"
+      }
+    },
+    {
+      "kind": "param",
+      "name": "cuda_version",
+      "value": "12.1",
+      "status": "verified",
+      "source": {
+        "file": "materials/train.log",
+        "line": 4,
+        "quote": "cuda_version=12.1"
+      }
+    },
+    {
+      "kind": "param",
+      "name": "cuda_visible_devices",
+      "value": "0",
+      "status": "verified",
+      "source": {
+        "file": "materials/run_train.sh",
+        "line": 2,
+        "quote": "export CUDA_VISIBLE_DEVICES=0"
+      }
+    },
+    {
+      "kind": "param",
+      "name": "device",
+      "value": "cuda",
+      "status": "verified",
+      "source": {
+        "file": "materials/train.log",
+        "line": 2,
+        "quote": "device=cuda"
+      }
+    },
+    {
+      "kind": "param",
+      "name": "epochs",
+      "value": "30",
+      "status": "verified",
+      "source": {
+        "file": "materials/train.log",
+        "line": 6,
+        "quote": "epochs=30"
+      }
+    },
+    {
+      "kind": "param",
+      "name": "model_name",
+      "value": "ResNet-50",
+      "status": "verified",
+      "source": {
+        "file": "materials/config.yaml",
+        "line": 9,
+        "quote": "name: ResNet-50"
+      }
+    },
+    {
+      "kind": "param",
+      "name": "model_pretrained",
+      "value": "true",
+      "status": "verified",
+      "source": {
+        "file": "materials/config.yaml",
+        "line": 10,
+        "quote": "pretrained: true"
+      }
+    },
+    {
+      "kind": "param",
+      "name": "python",
+      "value": "3.11.9",
+      "status": "verified",
+      "source": {
+        "file": "materials/train.log",
+        "line": 3,
+        "quote": "python=3.11.9"
+      }
+    },
+    {
+      "kind": "param",
+      "name": "seed",
+      "value": "42",
+      "status": "verified",
+      "source": {
+        "file": "materials/run_train.sh",
+        "line": 3,
+        "quote": "python train.py --config config.yaml --seed 42 --batch_size 64"
+      }
+    },
+    {
+      "kind": "param",
+      "name": "seed",
+      "value": "42",
+      "status": "verified",
+      "source": {
+        "file": "materials/train.log",
+        "line": 5,
+        "quote": "seed=42"
+      }
+    },
+    {
+      "kind": "param",
+      "name": "split",
+      "value": "test",
+      "status": "verified",
+      "source": {
+        "file": "materials/run_train.sh",
+        "line": 4,
+        "quote": "python eval.py --checkpoint best.pt --split test"
+      }
+    },
+    {
+      "kind": "param",
+      "name": "split_seed",
+      "value": "42",
+      "status": "verified",
+      "source": {
+        "file": "materials/dataset.md",
+        "line": 5,
+        "quote": "Split seed: 42"
+      }
+    },
+    {
+      "kind": "param",
+      "name": "test_batch_size",
+      "value": "128",
+      "status": "verified",
+      "source": {
+        "file": "materials/train.log",
+        "line": 9,
+        "quote": "test_batch_size=128"
+      }
+    },
+    {
+      "kind": "param",
+      "name": "train_batch_size",
+      "value": "64",
+      "status": "verified",
+      "source": {
+        "file": "materials/config.yaml",
+        "line": 2,
+        "quote": "batch_size: 64"
+      }
+    },
+    {
+      "kind": "param",
+      "name": "train_learning_rate",
+      "value": "0.001",
+      "status": "verified",
+      "source": {
+        "file": "materials/config.yaml",
+        "line": 3,
+        "quote": "learning_rate: 0.001"
+      }
+    },
+    {
+      "kind": "param",
+      "name": "train_max_epochs",
+      "value": "30",
+      "status": "verified",
+      "source": {
+        "file": "materials/config.yaml",
+        "line": 5,
+        "quote": "max_epochs: 30"
+      }
+    },
+    {
+      "kind": "param",
+      "name": "train_num_workers",
+      "value": "4",
+      "status": "verified",
+      "source": {
+        "file": "materials/config.yaml",
+        "line": 7,
+        "quote": "num_workers: 4"
+      }
+    },
+    {
+      "kind": "param",
+      "name": "train_seed",
+      "value": "42",
+      "status": "verified",
+      "source": {
+        "file": "materials/config.yaml",
+        "line": 6,
+        "quote": "seed: 42"
+      }
+    },
+    {
+      "kind": "param",
+      "name": "train_weight_decay",
+      "value": "0.0001",
+      "status": "verified",
+      "source": {
+        "file": "materials/config.yaml",
+        "line": 4,
+        "quote": "weight_decay: 0.0001"
+      }
+    },
+    {
+      "kind": "param",
+      "name": "val_batch_size",
+      "value": "128",
+      "status": "verified",
+      "source": {
+        "file": "materials/train.log",
+        "line": 8,
+        "quote": "val_batch_size=128"
+      }
+    },
+    {
+      "kind": "dataset",
+      "name": "D1.name",
+      "value": "CIFAR-10",
+      "status": "verified",
+      "source": {
+        "file": "materials/dataset.md",
+        "line": 1,
+        "quote": "Dataset: CIFAR-10"
+      }
+    },
+    {
+      "kind": "dataset",
+      "name": "D1.version",
+      "value": "v1.0",
+      "status": "verified",
+      "source": {
+        "file": "materials/dataset.md",
+        "line": 2,
+        "quote": "Version: v1.0"
+      }
+    },
+    {
+      "kind": "dataset",
+      "name": "D1.size",
+      "value": "60000 images",
+      "status": "verified",
+      "source": {
+        "file": "materials/dataset.md",
+        "line": 3,
+        "quote": "Size: 60000 images"
+      }
+    },
+    {
+      "kind": "dataset",
+      "name": "D1.split",
+      "value": "train 50000 / val 5000 / test 5000",
+      "status": "verified",
+      "source": {
+        "file": "materials/dataset.md",
+        "line": 4,
+        "quote": "Split: train 50000 / val 5000 / test 5000"
+      }
+    },
+    {
+      "kind": "dataset",
+      "name": "D1.split_seed",
+      "value": "42",
+      "status": "verified",
+      "source": {
+        "file": "materials/dataset.md",
+        "line": 5,
+        "quote": "Split seed: 42"
+      }
+    },
+    {
+      "kind": "dataset",
+      "name": "D1.preprocess",
+      "value": "random crop 32, horizontal flip",
+      "status": "verified",
+      "source": {
+        "file": "materials/dataset.md",
+        "line": 6,
+        "quote": "Preprocess: random crop 32, horizontal flip"
+      }
+    },
+    {
+      "kind": "control",
+      "name": "C1.baseline",
+      "value": "ResNet-18",
+      "status": "verified",
+      "source": {
+        "file": "materials/paper_notes.md",
+        "line": 1,
+        "quote": "Baseline: ResNet-18"
+      }
+    },
+    {
+      "kind": "control",
+      "name": "C1.baseline_version",
+      "value": "torchvision 0.17",
+      "status": "verified",
+      "source": {
+        "file": "materials/paper_notes.md",
+        "line": 2,
+        "quote": "Baseline version: torchvision 0.17"
+      }
+    },
+    {
+      "kind": "control",
+      "name": "C1.budget",
+      "value": "same 30 epochs, same batch size",
+      "status": "verified",
+      "source": {
+        "file": "materials/paper_notes.md",
+        "line": 3,
+        "quote": "Budget: same 30 epochs, same batch size"
+      }
+    },
+    {
+      "kind": "control",
+      "name": "C1.metric",
+      "value": "top-1 accuracy, mean over 3 seeds",
+      "status": "verified",
+      "source": {
+        "file": "materials/paper_notes.md",
+        "line": 4,
+        "quote": "Metric: top-1 accuracy, mean over 3 seeds"
+      }
+    },
+    {
+      "kind": "control",
+      "name": "C1.stat",
+      "value": "3 repeats",
+      "status": "verified",
+      "source": {
+        "file": "materials/paper_notes.md",
+        "line": 5,
+        "quote": "Stat: 3 repeats"
+      }
+    }
+  ],
+  "uncertainty": [
+    {
+      "id": "G01",
+      "element": "params.unit",
+      "what": "params.unit 不足（missing）",
+      "why": "材料中未找到可核对来源",
+      "impact": "章节可能缺少该要素或无法复现",
+      "question": "请作者补充/确认 params.unit 的取值与来源",
+      "status": "open"
+    },
+    {
+      "id": "G02",
+      "element": "settings.hardware",
+      "what": "settings.hardware 不足（missing）",
+      "why": "材料中未找到可核对来源",
+      "impact": "章节可能缺少该要素或无法复现",
+      "question": "请作者补充/确认 settings.hardware 的取值与来源",
+      "status": "open"
+    },
+    {
+      "id": "G03",
+      "element": "repro.code_version",
+      "what": "repro.code_version 不足（missing）",
+      "why": "[MISSING] commit / release",
+      "impact": "章节可能缺少该要素或无法复现",
+      "question": "请作者补充/确认 repro.code_version 的取值与来源",
+      "status": "open"
+    }
+  ],
+  "status": "partial",
+  "artifacts": {
+    "draft": "draft.md",
+    "param_table": "param_table.md",
+    "repro": "repro_checklist.md",
+    "queries": "author_queries.md",
+    "gaps": "gaps.json",
+    "ledger": "ledger.json",
+    "audit": "audit.json"
+  },
+  "unresolved_contract_fields": [],
+  "change_records": [
+    {
+      "action": "extract",
+      "detail": "21 参数候选，0 条 locator 校验失败"
+    },
+    {
+      "action": "render",
+      "detail": "26 个槽位替换"
+    },
+    {
+      "action": "firewall",
+      "detail": "0 个未绑定数值"
+    },
+    {
+      "action": "gaps",
+      "detail": "3 条待确认"
+    }
+  ],
+  "audit": {
+    "case_id": "mini-methods-001",
+    "contract_shape": "list",
+    "contract_fields": [
+      "draft_md",
+      "fact_source_map",
+      "uncertainty",
+      "status"
+    ],
+    "render_errors": [],
+    "unbound_numbers": [],
+    "limitation_issues": [],
+    "rejected_candidates": [],
+    "proposals_rejected": [],
+    "substitutions": [
+      {
+        "slot": "D:D1",
+        "rendered": "CIFAR-10 v1.0",
+        "kind": "dataset",
+        "id": "D1"
+      },
+      {
+        "slot": "P:split_seed",
+        "rendered": "42",
+        "kind": "param",
+        "id": "P_split_seed"
+      },
+      {
+        "slot": "D:D1",
+        "rendered": "CIFAR-10 v1.0",
+        "kind": "dataset",
+        "id": "D1"
+      },
+      {
+        "slot": "P:config",
+        "rendered": "config.yaml",
+        "kind": "param",
+        "id": "P_config"
+      },
+      {
+        "slot": "P:train_batch_size",
+        "rendered": "64",
+        "kind": "param",
+        "id": "P_train_batch_size"
+      },
+      {
+        "slot": "P:train_learning_rate",
+        "rendered": "0.001",
+        "kind": "param",
+        "id": "P_train_learning_rate"
+      },
+      {
+        "slot": "P:checkpoint",
+        "rendered": "best.pt",
+        "kind": "param",
+        "id": "P_checkpoint"
+      },
+      {
+        "slot": "P:train_max_epochs",
+        "rendered": "30",
+        "kind": "param",
+        "id": "P_train_max_epochs"
+      },
+      {
+        "slot": "P:python",
+        "rendered": "3.11.9",
+        "kind": "param",
+        "id": "P_python"
+      },
+      {
+        "slot": "P:cuda_version",
+        "rendered": "12.1",
+        "kind": "param",
+        "id": "P_cuda_version"
+      },
+      {
+        "slot": "P:cuda_visible_devices",
+        "rendered": "0",
+        "kind": "param",
+        "id": "P_cuda_visible_devices"
+      },
+      {
+        "slot": "P:config",
+        "rendered": "config.yaml",
+        "kind": "param",
+        "id": "P_config"
+      },
+      {
+        "slot": "P:seed",
+        "rendered": "42",
+        "kind": "param",
+        "id": "P_seed"
+      },
+      {
+        "slot": "P:train_batch_size",
+        "rendered": "64",
+        "kind": "param",
+        "id": "P_train_batch_size"
+      },
+      {
+        "slot": "P:train_batch_size",
+        "rendered": "64",
+        "kind": "param",
+        "id": "P_train_batch_size"
+      },
+      {
+        "slot": "P:train_num_workers",
+        "rendered": "4",
+        "kind": "param",
+        "id": "P_train_num_workers"
+      },
+      {
+        "slot": "P:val_batch_size",
+        "rendered": "128",
+        "kind": "param",
+        "id": "P_val_batch_size"
+      },
+      {
+        "slot": "P:test_batch_size",
+        "rendered": "128",
+        "kind": "param",
+        "id": "P_test_batch_size"
+      },
+      {
+        "slot": "P:seed",
+        "rendered": "42",
+        "kind": "param",
+        "id": "P_seed"
+      },
+      {
+        "slot": "P:train_batch_size",
+        "rendered": "64",
+        "kind": "param",
+        "id": "P_train_batch_size"
+      },
+      {
+        "slot": "P:train_learning_rate",
+        "rendered": "0.001",
+        "kind": "param",
+        "id": "P_train_learning_rate"
+      },
+      {
+        "slot": "P:train_weight_decay",
+        "rendered": "0.0001",
+        "kind": "param",
+        "id": "P_train_weight_decay"
+      },
+      {
+        "slot": "P:train_max_epochs",
+        "rendered": "30",
+        "kind": "param",
+        "id": "P_train_max_epochs"
+      },
+      {
+        "slot": "C:C1",
+        "rendered": "ResNet-18 torchvision 0.17",
+        "kind": "control",
+        "id": "C1"
+      },
+      {
+        "slot": "P:train_batch_size",
+        "rendered": "64",
+        "kind": "param",
+        "id": "P_train_batch_size"
+      },
+      {
+        "slot": "P:split_seed",
+        "rendered": "42",
+        "kind": "param",
+        "id": "P_split_seed"
+      }
+    ],
+    "coverage": {
+      "present": 27,
+      "partial": 0,
+      "missing": 3,
+      "total": 30
+    },
+    "repro": {
+      "present": 6,
+      "partial": 0,
+      "missing": 2,
+      "total": 8
+    },
+    "status": "partial",
+    "draft_sha256_16": "94b8f798ab697d08"
+  }
+}

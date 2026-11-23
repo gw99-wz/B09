@@ -1,0 +1,49 @@
+# reproduce.py — synthetic mini example (not a benchmark result)
+# case: C:/Users/TYTX/Documents/deepseek-harness/default-workspace/B09/submission/examples/mini/case.json
+# init rc=0  check rc=0
+# pack: {"files": 47, "bytes": 158259, "issues": [], "ok": true}
+# --- console ---
+{
+  "stage": "init",
+  "case_id": "mini-methods-001",
+  "materials": 5,
+  "params": 21,
+  "conflicts": 0,
+  "datasets": [
+    "D1"
+  ],
+  "controls": [
+    "C1"
+  ],
+  "draft": "C:\\Users\\TYTX\\Documents\\deepseek-harness\\default-workspace\\B09\\submission\\examples\\mini\\work\\draft.src.md"
+}
+{
+  "stage": "check",
+  "case_id": "mini-methods-001",
+  "status": "partial",
+  "unbound_numbers": 0,
+  "render_errors": 0,
+  "limitation_issues": 0,
+  "gaps": 3,
+  "coverage": {
+    "present": 27,
+    "partial": 0,
+    "missing": 3,
+    "total": 30
+  },
+  "coverage_score": 0.9,
+  "repro": {
+    "present": 6,
+    "partial": 0,
+    "missing": 2,
+    "total": 8
+  },
+  "repro_score": 0.75,
+  "pack": {
+    "files": 11,
+    "bytes": 48779,
+    "issues": [],
+    "ok": true
+  },
+  "out": "C:\\Users\\TYTX\\Documents\\deepseek-harness\\default-workspace\\B09\\submission\\examples\\mini\\out"
+}
