@@ -1,0 +1,27 @@
+# Build / run artifacts
+.build/
+*.log
+# ...except the real execution log the ARM manifest points at
+!submission/execution/run.log
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+
+# Node
+node_modules/
+
+# Local secrets & session state — never committed
+.pg-cli/
+.env
+*.token
+
+# Traces / session logs live at repo root only; anything under submission/ is a
+# shipped example and must NOT be caught by this rule.
+/*.jsonl
+
+# OS
+Thumbs.db
+.DS_Store
