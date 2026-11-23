@@ -1,0 +1,11 @@
+2024-03-11 09:00:01 start training
+device=cuda
+python=3.11.9
+cuda_version=12.1
+seed=42
+epochs=30
+batch_size=64
+val_batch_size=128
+test_batch_size=128
+loss=0.5231
+best_val_acc=0.9123

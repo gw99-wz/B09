@@ -3,6 +3,8 @@
 *.log
 # ...except the real execution log the ARM manifest points at
 !submission/execution/run.log
+# ...and the synthetic example material that happens to be a .log
+!submission/examples/mini/materials/train.log
 
 # Python
 __pycache__/
