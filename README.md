@@ -8,7 +8,7 @@
 | Challenge ID | `product-arena-05-64faa4a2` |
 | 赛题页 | https://play.bohrium.com/challenge/product-arena-05-64faa4a2 |
 | 提交物 | `submission/`（Skill 本体 + 确定性脚本 + 模板 + 文档 + 示例 + 回归题集） |
-| 提交 | Attempt **99623**（`submitted`，人工评分排队） |
+| 提交 | 已正式提交，人工评分排队（状态与分数以平台记录为准） |
 | 自测 | **10/10 通过**（含 4 类反例） |
 | 聚焦 | **写得准**（参数台账 + 数值防火墙）+ **做得着**（复现清单生成），贯通 **写得全** 与 **说得住** |
 
